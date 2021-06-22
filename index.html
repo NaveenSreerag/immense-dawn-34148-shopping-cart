@@ -16,6 +16,8 @@
     <!-- font awesome -->
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- light slider -->
+    <link rel="stylesheet" href="css/lightslider.css">
 </head>
 
 <body>
@@ -135,14 +137,151 @@
 
     <!---------------------------------------- Page silder -------------------------------------------->
     <section>
-        <div class="full-slider-box f-slide-1">
-            <div class="slider-text-container">
-                <div class="f-slider-text">
-                    <span>Limited Offer</span>
-                    <strong>30% off <br> with promo code</strong>
-                    <a href="#" class="f-slider-btn">Shop Now</a>
+
+
+
+
+        <ul id="adaptive" class="cs-hidden">
+            <!-- box 1 -->
+            <li class="item-a">
+                <div class="full-slider-box f-slide-1">
+                    <div class="slider-text-container">
+                        <div class="f-slider-text">
+                            <span>Limited Offer</span>
+                            <strong>30% off <br> with <font>promo code</font></strong>
+                            <a href="#" class="f-slider-btn">Shop Now</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
+
+            </li>
+
+            <li class="item-a">
+                <div class="full-slider-box f-slide-1">
+                    <div class="slider-text-container">
+                        <div class="f-slider-text">
+                            <span>Limited Offer</span>
+                            <strong>30% off <br> with <font>promo code</font></strong>
+                            <a href="#" class="f-slider-btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+
+            <li class="item-a">
+                <div class="full-slider-box f-slide-1">
+                    <div class="slider-text-container">
+                        <div class="f-slider-text">
+                            <span>Limited Offer</span>
+                            <strong>30% off <br> with <font>promo code</font></strong>
+                            <a href="#" class="f-slider-btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+
+
+
+        </ul>
+    </section>
+
+    <!--------------------------------Featured Categories  --------------------------------->
+    <section>
+        <div class="feature-heading">
+            <h2>Featured Categories</h2>
+        </div>
+
+        <ul id="autoW" class="cs-hidden">
+            <li class="item-a">
+                <div class="feature-box">
+                    <a href="#">
+                        <img src="images/image 5.jpeg" alt="">
+                    </a>
+                </div>
+                <span>T-shirt</span>
+            </li>
+
+            <li class="item-a">
+                <div class="feature-box">
+                    <a href="#">
+                        <img src="images/iimage 13.jpeg" alt="">
+                    </a>
+                </div>
+                <span>Watches</span>
+            </li>
+
+            <li class="item-a">
+                <div class="feature-box">
+                    <a href="#">
+                        <img src="images/image 7.jpeg" alt="">
+                    </a>
+                </div>
+                <span>Headset</span>
+            </li>
+
+            <li class="item-a">
+                <div class="feature-box">
+                    <a href="#">
+                        <img src="images/image 8.jpeg" alt="">
+                    </a>
+                </div>
+                <span>Shoes</span>
+            </li>
+
+            <li class="item-a">
+                <div class="feature-box">
+                    <a href="#">
+                        <img src="images/image 9.jpeg" alt="">
+                    </a>
+                </div>
+                <span>Baby Girl's Dresses</span>
+            </li>
+
+            <li class="item-a">
+                <div class="feature-box">
+                    <a href="#">
+                        <img src="images/image 10.jpeg" alt="">
+                    </a>
+                </div>
+                <span>Caps</span>
+            </li>
+
+            
+            <li class="item-a">
+                <div class="feature-box">
+                    <a href="#">
+                        <img src="images/image 11.jpeg" alt="">
+                    </a>
+                </div>
+                <span>Shirts</span>
+            </li>
+
+            <li class="item-a">
+                <div class="feature-box">
+                    <a href="#">
+                        <img src="images/image 12.jpeg" alt="">
+                    </a>
+                </div>
+                <span>Women Dresses</span>
+            </li>
+
+
+           
+        </ul>
+
+
+    </section>
+
+
+    <!-- new arrival -->
+
+    <section class="arrival-new"> 
+        <div class="heading-arrival">
+            <strong>New Arrival</strong>
+            <p>We Provide You New Design Fashion Cloths</p>
+
         </div>
     </section>
 
@@ -186,8 +325,34 @@
 
 
 
+        // Page slider
+
+        $(document).ready(function () {
+            $('#adaptive').lightSlider({
+                adaptiveHeight: true,
+                auto: true,
+
+                item: 1,
+                slideMargin: 0,
+                loop: true
+            });
+        });
+
+        // feature categories silder
+
+        $(document).ready(function () {
+            $('#autoW').lightSlider({
+                autoWidth: true,
+                loop: true,
+                onSliderLoad: function () {
+                    $('#autoW').removeClass('cS-hidden');
+                }
+            });
+        });
+
 
     </script>
+    <script src="js/lightslider.js"></script>
 
 </body>
 
