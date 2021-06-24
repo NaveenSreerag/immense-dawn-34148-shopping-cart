@@ -564,3 +564,145 @@ span.cart-num{
     width: 80%;
     line-height: 23px;
 }
+
+/* banner */
+.banner{
+    width: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40vh;
+    margin: 20px 0px;
+}
+.banner-text-container{
+    width: 80%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+}
+.banner-text{
+    display: flex;
+    flex-direction: column;
+    margin-right: auto;
+}
+.banner-text strong{
+    color: #333;
+    font-size: 3rem;
+    line-height: 55px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+}
+.banner-text span{
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    font-weight: 500;
+    color: #666;
+    font-size: 1.2rem;
+}
+.banner-btn{
+    width: 170px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    background-color: #0b9d8a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+.banner-text strong font{
+    color: #0b9d8a;
+}
+
+/************************************** Service  *******************************************/
+.service{
+    display: flex;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+.service-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0,0,0.1 );
+    min-width: 250px;
+    padding: 20px;
+    margin: 20px;
+    flex-grow: 0.7;
+}
+.service-box i{
+    color: #0b9d8a;
+    font-size: 3rem;
+    margin: 15px;
+}
+.service-box span{
+    color: #222;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    font-size: 1rem;
+
+}
+
+.service-box p{
+    color: #878787;
+    margin: 1px;
+    font-size: 0.9rem;
+}
+
+/************************************************** Footer *****************************************/
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-top: 1px solid rgba(0, 0,0,0.1 );
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+.copy{
+    font-size: 0.9rem;
+    color: #4e4e4e;
+    letter-spacing: 1px;
+    margin-right: 100px;
+    
+}
+.subscribe{
+    margin-left: 100px;
+}
+.subscribe form input{
+    width: 240px;
+    height: 43px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border: 1px solid rgba(0, 0,0,0.2 );
+    outline: none;
+    box-shadow: 2px 2px 30px rgba(0, 0,0,0.04 );
+    
+}
+.subscribe form input[type="submit"]{
+    width: 120px;
+    background-color: #0b9d8a;
+    color: #fff;
+    margin: 0px 5px;
+}
+
+.fix-nav{
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #fff;
+    box-shadow: 2px 2px 30px rgba(0, 0,0,0.04 );
+    z-index: 102;
+}
