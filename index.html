@@ -18,6 +18,7 @@
         integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
     <!-- light slider -->
     <link rel="stylesheet" href="css/lightslider.css">
+    <script src="https://kit.fontawesome.com/cb20171509.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -45,6 +46,8 @@
             <a href="#" class="logo">
                 <img src="/images/pexels-andrea-piacquadio-994197.jpg" alt="">
             </a>
+
+            <div class="toggle"></div>
 
             <ul class="menu">
                 <li><a href="#">Home</a></li>
@@ -81,7 +84,7 @@
     <!-- search -->
     <div class="search-bar">
         <div class="search-input">
-            <input type="text" name="" id="" placeholder="Search For Product">
+            <input type="text"  placeholder="Search For Product">
             <a href="javascript:void(0);" class="cancel-search">
                 <i class="fas fa-times"></i>
             </a>
@@ -98,9 +101,9 @@
             </a>
             <strong>Log In</strong>
             <form action="">
-                <input type="email" name="email" id="" placeholder="@gmail.com" required>
-                <input type="password" name="password" id="" placeholder="Password" required>
-                <input type="submit" name="" id="" value="Log In">
+                <input type="email" name="email"  placeholder="@gmail.com" required>
+                <input type="password" name="password"  placeholder="Password" required>
+                <input type="submit"  value="Log In">
 
             </form>
             <div class="form-btns">
@@ -118,10 +121,10 @@
             </a>
             <strong>Sign Up</strong>
             <form action="">
-                <input type="text" name="" id="" placeholder="Username" required>
-                <input type="email" name="email" id="" placeholder="@gmail.com" required>
-                <input type="password" name="password" id="" placeholder="Password" required>
-                <input type="submit" name="" id="" value="Sign up">
+                <input type="text"  placeholder="Username" required>
+                <input type="email" name="email"  placeholder="@gmail.com" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Sign up">
 
             </form>
             <div class="form-btns">
@@ -589,20 +592,86 @@
     </section>
 
     <!---------------------------------------- Footer ------------------------------------>
-    <footer>
-        
-        <span class="copy">
-            Copyright 2020 - GoingToInternet
-        </span>
-        <div class="subscribe">
-            <form >
-                <input type="email" placeholder="@gamil.com">
-                <input type="submit" value="Subscribe">
-            </form>
+   
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
 
+            </div>
+            <div class="footer-col">
+                <h4>Help</h4>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Shipping</a></li>
+                    <li><a href="#">Returns</a></li>
+                    <li><a href="#">Order Status</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                </ul>
+
+            </div>
+            <div class="footer-col">
+                <h4>Follow Us </h4>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-at"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+
+            </div>
+            <div class="footer-col">
+                <h4>Online Shop</h4>
+                <ul>
+                    <li><a href="#">Mobile Phones</a></li>
+                    <li><a href="#">Bag</a></li>
+                    <li><a href="#">Shoes</a></li>
+                    <li><a href="#">Clothes</a></li>
+                </ul>
+
+            </div>
+            
         </div>
+    </div>
 
-    </footer>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -671,7 +740,15 @@
             else{
                 $('.navigation').removeClass('fix-nav')
             }
-        })
+        });
+
+
+        $(document).ready(function(){
+            $('.toggle').click(function(){
+                $('.toggle').toggleClass('active')
+                $('.navigation').toggleClass('active')
+            })
+        });
 
 
     </script>

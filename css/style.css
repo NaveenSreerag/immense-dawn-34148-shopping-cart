@@ -11,6 +11,8 @@ body{
 }
 *{
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 ul{
     list-style: none;
@@ -660,42 +662,94 @@ span.cart-num{
 }
 
 /************************************************** Footer *****************************************/
-footer{
+
+
+.footer{
+    margin-top: 2rem;
+    background-color: #272727;
+  padding: 70px 0px;
+  box-sizing: border-box;
+}
+
+.footer .container{
+    max-width: 1170px;
+   
+    margin: auto;
+}
+.footer .container .row{
     display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 10px;
-    border-top: 1px solid rgba(0, 0,0,0.1 );
-    flex-wrap: wrap;
-    margin-top: 20px;
-    margin-bottom: 5px;
+    flex-wrap: wrap
 }
-.copy{
-    font-size: 0.9rem;
-    color: #4e4e4e;
-    letter-spacing: 1px;
-    margin-right: 100px;
+.footer .container .row .footer-col{
+    width: 25%;
     
+
 }
-.subscribe{
-    margin-left: 100px;
-}
-.subscribe form input{
-    width: 240px;
-    height: 43px;
-    padding-left: 20px;
-    padding-right: 20px;
-    border: 1px solid rgba(0, 0,0,0.2 );
-    outline: none;
-    box-shadow: 2px 2px 30px rgba(0, 0,0,0.04 );
-    
-}
-.subscribe form input[type="submit"]{
-    width: 120px;
-    background-color: #0b9d8a;
+.footer .container .row .footer-col h4{
+    font-size: 1.1rem;
     color: #fff;
-    margin: 0px 5px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 1rem;
+    margin-bottom: 1.9rem;
+    position: relative;
+    
 }
+.footer .container .row .footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    background-color: #e91e63;
+    height: 2px;
+    box-sizing: border-box;
+    width: 60px;
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+.footer-col ul li a{
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+    color: #66DE93;
+    padding-left: 9px;
+}
+.footer-col .social-icons a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 2.5rem;
+    border-radius: 50%;
+    color: #fff;
+    transition: all 0.5s ease;
+
+}
+.footer-col .social-icons a:hover{
+    color: #e91e63;
+    background-color: #fff;
+}
+
+
+
+
+
+
+
+
+
+/************************************************** Footer *****************************************/
+
 
 .fix-nav{
     width: 100%;
@@ -705,4 +759,185 @@ footer{
     background-color: #fff;
     box-shadow: 2px 2px 30px rgba(0, 0,0,0.04 );
     z-index: 102;
+}
+.toggle{
+    display: none;
+}
+
+@media(max-width:1010px){
+ 
+    nav{
+        position: relative;
+        
+    }
+    .navigation{
+        height: 80px;
+        
+    }
+    .fix-nav{
+        height: 80px;
+    }
+    ul.menu{
+        position: absolute;
+        top: 110px;
+        left: 0px;
+        background-color: #fff;
+        border-bottom: 4px solid #0b9d8a;
+        width: 100%;
+        padding: 0px;
+        margin: 0px;
+        z-index: 102;
+        flex-direction: column;
+        display: none;
+     
+    }
+    .fix-nav .menu{
+        top: 80px;
+
+    }
+    ul.menu li{
+        width: 100%;
+        margin: 0px;
+        padding: 0px;
+       
+    }
+    .navigation .menu li a{
+        width: 100%;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        margin: 0px;
+        padding: 25px;
+        border: 1px solid rgba(0, 0,0,0.03 );
+    }
+    span.sale-label{
+        display: none;
+    }
+    .toggle{
+        display: block;
+    }
+    .toggle:before{
+        content: '\f0c9';
+        font-family: fontAwesome;
+        line-height: 30px;
+        z-index: 1;
+        cursor: pointer;
+
+    }
+    .toggle.active:before{
+        content: '\f00d';
+    }
+    .navigation.active .menu{
+        display: block;
+    }
+    .full-slider-box,
+    .banner{
+        height: 45vh;
+    }
+    .f-slider-text span,
+    .banner-text span{
+        font-size: 0.9rem;
+
+    }
+    .f-slider-text strong,
+    .banner-text strong{
+        font-size: 2rem;
+        line-height: 40px;
+    }
+    .search-input{
+        height: 60px;
+    }
+    .search-input input{
+        font-size: 1.3rem;
+    }
+    .cancel-search{
+        font-size: 1.2rem;
+    }
+   
+
+}
+
+@media (max-width:800){
+    .product-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+   
+}
+
+@media(max-width:600px){
+    .navigation{
+        padding: 10px;
+    }
+    .full-slider-text strong,
+    .banner-text strong{
+        font-size: 1.2rem;
+        line-height: 25px;
+    }
+    .full-slider-box,
+    .banner{
+        height: 30vh;
+    }
+    .f-slider-text span,
+    .banner-text span{
+        font-size: 0.8rem;
+    }
+    .f-slider-btn,
+    .banner-btn{
+        width: 120px;
+        height: 30px;
+        font-size: 0.7rem;
+        border-radius: 2rem;
+    }
+    
+    .feature-heading h2{
+        font-size: 1.1rem;
+    }
+    .feature-box{
+        width: 120px;
+        height: 120px;
+        border-radius: 1.8rem;
+    }
+    .arrival-new strong,
+    .feature-heading strong{
+        font-size: 1.2rem;
+    }
+    .arrival-new p,
+    .feature-heading p{
+        font-size: 0.8rem;
+        text-align: center;
+    }
+    .service{
+        width: 100%;
+    }
+    .service-box{
+        width: 100%;
+    }
+
+
+ 
+
+
+    .login-form,
+    .sign-up-form{
+        width: 90%;
+    }
+    
+ 
+}
+
+
+/******* Footer ******/
+@media(max-width:767px){
+    .footer .container .row .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+@media(max-width:574px){
+    .footer .container .row .footer-col{
+        width: 100%;
+        margin-bottom: 70px;
+       margin-left: 30px;
+    }
 }
