@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping </title>
+
+    <!--------stylesheet ---------->
+    <!--------stylesheet ---------->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/singleproduct.css">
+
+    <!---------fav-icon  ------->
+    <link rel="shortcut icon" href="images/pexels-andrea-piacquadio-994197.jpg">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+        integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- light slider -->
+    <link rel="stylesheet" href="css/lightslider.css">
+    <script src="https://kit.fontawesome.com/cb20171509.js" crossorigin="anonymous"></script>
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid nav">
+            <a class="navbar-brand logo" href="#">
+                <img src="images/xl-kuns501-s-rubellite-original.jpeg" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Men</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Women</a>
+
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">Kids</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Shop</a>
+                        <span class="sale-label">Sale</span>
+                    </li>
+
+                </ul>
+
+            </div>
+            <div class="right-menu">
+                <!-- <a href="javascript:void(0);" class="search">
+                    <i class="fas fa-search"></i>
+                </a> -->
+                <a href="javascript:void(0);" class="user">
+                    <i class="fas fa-user"></i>
+                </a>
+                <a href="#">
+                    <i class="fas fa-shopping-cart">
+                        <span class="cart-num">0</span>
+                    </i>
+                </a>
+
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- search -->
+    <!-- <div class="search-bar">
+        <div class="search-input">
+            <input type="text" placeholder="Search For Product">
+            <a href="javascript:void(0);" class="cancel-search">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+    </div> -->
+
+    <!---------------------Login and sign up ---------------------->
+    <div class="container-fluid">
+
+
+        <div class="form">
+
+            <div class="login-form">
+                <a href="javascript:void(0);" class="cancel-form">
+                    <i class="fas fa-times"></i>
+                </a>
+                <strong>Log In</strong>
+                <form action="">
+                    <input type="email" name="email" placeholder="@gmail.com" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="submit" value="Log In">
+
+                </form>
+                <div class="form-btns">
+                    <a href="#" class="forget">Forget Your Password</a>
+                    <a href="javascript:void(0);" class="sign-up-btn">Create Account</a>
+                </div>
+
+
+            </div>
+
+
+            <div class="sign-up-form">
+                <a href="javascript:void(0);" class="cancel-form">
+                    <i class="fas fa-times"></i>
+                </a>
+                <strong>Sign Up</strong>
+                <form action="">
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" name="email" placeholder="@gmail.com" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="submit" value="Sign up">
+
+                </form>
+                <div class="form-btns">
+                    <a href="javascript:void(0);" class="already-account">Already have an account?</a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+    <section class="section product-detail">
+        <div class="container-fluid ">
+
+            <div class="details ">
+                <div class="left">
+                    <div class="main">
+                        <img src="/images/sony 1.jpeg" alt="" id="main-img">
+                    </div>
+
+                    <div class="thumbnails">
+                        <div class="thumbnail">
+                            <img src="images/sony 2.jpeg" alt="" class="thumbnail-img">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="images/sony 3.jpeg" alt="" class="thumbnail-img">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="images/sony 4.jpeg" alt="" class="thumbnail-img">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="images/sony 5.jpeg" alt="" class="thumbnail-img">
+                        </div>
+                        <div class="thumbnail">
+                            <img src="images/sony 5.jpeg" alt="" class="thumbnail-img">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right">
+                    <h2>ZEBRONICS ZEB-THUNDER Bluetooth Headset(Red, On the Ear)</h2>
+                    <div class="price">$50</div>
+                    <form>
+                        <div>
+                            <select>
+                                <option value="Select Size" selected disabled>Select Size</option>
+                                <option value="32">32</option>
+                                <option value="42">42</option>
+                                <option value="52">52</option>
+                                <option value="62">62</option>
+                            </select>
+
+                        </div>
+                    </form>
+                    <form action="" class="form-add">
+                        <input type="text" placeholder="1">
+                        <a href="#" class="addCart">Add to Cart</a>
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="container-fluid pro-details">
+
+
+                <h3>Product Details <i class="fal fa-chevron-circle-right"></i></h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptas nesciunt qui, rerum
+                    eligendi quia cumque temporibus enim. Quibusdam velit hic enim magni, eos ducimus!
+                    ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptas nesciunt qui, rerum eligendi
+                    quia cumque temporibus enim. Quibusdam velit hic enim magni
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!---------------------------------------- Footer ------------------------------------>
+
+    <footer class="footer">
+        <div class="container-fluid conta">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Order Status</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us </h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-at"></i></a>
+
+                    </div>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Online Shop</h4>
+                    <ul>
+                        <li><a href="#">Mobile Phones</a></li>
+                        <li><a href="#">Bag</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Clothes</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <script type="text/javascript">
+        //  search bar
+        $(document).on('click', '.search', function () {
+            $('.search-bar').addClass('search-bar-active')
+        });
+
+        $(document).on('click', '.cancel-search', function () {
+            $('.search-bar').removeClass('search-bar-active')
+        });
+
+
+        //  login and sign up
+
+        $(document).on('click', '.user,.already-account', function () {
+            $('.form').addClass('login-active').removeClass('sign-up-active')
+        });
+
+        $(document).on('click', '.sign-up-btn', function () {
+            $('.form').addClass('sign-up-active').removeClass('login-active')
+        });
+
+        $(document).on('click', '.cancel-form', function () {
+            $('.form').removeClass('login-active').removeClass('sign-up-active')
+        });
+
+
+
+
+
+        $(window).scroll(function () {
+            if ($(document).scrollTop() > 50) {
+                $('.navigation').addClass('fix-nav');
+            }
+            else {
+                $('.navigation').removeClass('fix-nav')
+            }
+        });
+
+
+        $(document).ready(function () {
+            $('.toggle').click(function () {
+                $('.toggle').toggleClass('active')
+                $('.navigation').toggleClass('active')
+            })
+        });
+
+
+    </script>
+
+<!--------------thumbnail gallery image  ------------------->
+    <script>
+        var mainImage= document.getElementById("main-img");
+        var thumbnailImage=document.getElementsByClassName("thumbnail-img");
+
+        thumbnailImage[0].onclick= function(){
+            mainImage.src= thumbnailImage[0].src
+        }
+        
+        thumbnailImage[1].onclick= function(){
+            mainImage.src= thumbnailImage[1].src
+        }
+        
+        thumbnailImage[2].onclick= function(){
+            mainImage.src= thumbnailImage[2].src
+        }
+        
+        thumbnailImage[3].onclick= function(){
+            mainImage.src= thumbnailImage[3].src
+        }
+        
+        thumbnailImage[4].onclick= function(){
+            mainImage.src= thumbnailImage[4].src
+        }
+        thumbnailImage[5].onclick= function(){
+            mainImage.src= thumbnailImage[5].src
+        }
+        thumbnailImage[6].onclick= function(){
+            mainImage.src= thumbnailImage[6].src
+        }
+        
+        thumbnailImage[7].onclick= function(){
+            mainImage.src= thumbnailImage[7].src
+        }
+        
+        thumbnailImage[8].onclick= function(){
+            mainImage.src= thumbnailImage[8].src
+        }
+     
+    </script>
+    <script src="js/lightslider.js"></script>
+
+    <script src="js/bootstrap.js"></script>
+</body>
+
+</html>

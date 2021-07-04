@@ -7,12 +7,17 @@ body{
     padding: 0px;
     font-family: 'Poppins', sans-serif;
     background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+   
 
 }
 *{
-    box-sizing: border-box;
+    
     margin: 0;
     padding: 0;
+    text-decoration: none;
+
 }
 ul{
     list-style: none;
@@ -23,10 +28,16 @@ a{
 
 /* *************************** nav ***************************/
 
+
+
+
+
 nav{
     width: 100%;
-    box-shadow: 0 0 20px 0px rgba(0, 0,0,0.1 );
-    z-index: 100;
+    box-shadow: 0 0 20px 0px rgba(0, 0,0,0.2 );
+   
+
+   
 }
 .social-call{
     height: 40px;
@@ -50,37 +61,33 @@ nav{
     transition: all ease 0.3s;
 }
 
-nav .navigation{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+nav .nav{
+
     padding: 0 45px;
 
 }
-.navigation .logo img{
+nav .logo img{
     height: 30px;
 }
-ul.menu{
-    display: flex;
-   
-}
-ul.menu li{
+
+nav ul li{
     position: relative;
     margin: 20px;
-    display: flex;
+   
     text-transform: uppercase;
     font-weight: 500;
 }
-ul.menu li a{
+nav ul li a{
     color: #555;
 }
-div.right-menu a{
+nav div.right-menu a{
     margin: 0 10px;
     font-size: 1.2rem;
+    text-decoration: none;
     color: rgba(0, 0,0,0.5 );
 }
 
-.menu li a:hover,
+nav ul li a:hover,
 div.right-menu a:hover,
 .cancel-search:hover,
 .cancel-form:hover{
@@ -269,11 +276,13 @@ span.cart-num{
     margin-top: 10px;
 }
 .form-btns a{
+    text-decoration: none;
     color: #4d4d4d;
+   
     font-size: 0.9rem;
 }
 .sign-up-btn{
-    border-bottom: 1px solid #868686;
+    
     line-height: 16px;
 }
 .cancel-form{
@@ -513,7 +522,7 @@ span.cart-num{
 .product-price{
     color: #333;
     font-size: 1.2rem;
-    font-weight: 400;
+    font-weight: 500;
 }
 .product-items:hover{
     box-shadow: 2px 2px 30px rgba(0,0,0,0.2 );
@@ -661,31 +670,134 @@ span.cart-num{
     font-size: 0.9rem;
 }
 
+
+/*****************************************************Cart checkout page **************************/
+
+.left-side-cart{
+    margin-left: auto!important;
+    margin-right: auto!important;
+    margin-bottom: 3rem!important;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+.left-side-cart .card{
+    padding: 1rem;
+    
+   
+}
+.left-side-cart .card h3{
+    font-weight: 600;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    font-size: 1.3rem;
+    color: #dd2f6e;
+}
+.left-side-cart .card .cart-product-img{
+    margin: 0 auto;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.left-side-cart .card .cart-product-img img{
+    height: 225px;
+    width: 225px;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+.card-title .cart-product-name{
+    font-size: 1.4rem;
+    color: #dd2f6e;
+}
+.card-title p{
+    font-size: .9rem;
+    font-weight: 500;
+}
+.cart-quantity{
+    outline: none;
+}
+
+.remove{
+    display: flex;
+    justify-content: space-between;
+    color: #dd2f6e;
+   
+}
+.remove p{
+   font-weight: 600;
+    font-size: 0.8rem;
+  
+}
+.remove p i{
+    margin-right: 0.2rem;
+}
+
+.right-side-cart{
+    padding: 1.2rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+
+}
+.right-side-cart .prod-total{
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+}
+.right-side-cart p{
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #dd2f6e;
+}
+.right-side-cart div{
+    display: flex;
+    justify-content: space-between;
+}
+.right-side-cart .cart-product-total-amount p{
+    font-size: 1rem;
+   font-weight: 600;
+}
+.right-side-cart .checkout-btn{
+  
+    text-transform: uppercase;
+    letter-spacing: 1px;
+   border: #0b9d8a;
+    border-radius: 1rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+   
+}
+.address .address-btn{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+   border: #0b9d8a;
+    border-radius: 1rem;
+    font-size: 0.7rem;
+    text-align: center;
+    font-weight: 600;
+   
+}
 /************************************************** Footer *****************************************/
 
 
 .footer{
     margin-top: 2rem;
     background-color: #272727;
-  padding: 70px 0px;
+  padding: 70px 1.5rem;
   box-sizing: border-box;
 }
 
-.footer .container{
-    max-width: 1170px;
-   
-    margin: auto;
+.footer .conta{
+    width: 100%;
+
 }
-.footer .container .row{
+.footer .conta .row{
     display: flex;
     flex-wrap: wrap
 }
-.footer .container .row .footer-col{
+.footer .conta .row .footer-col{
     width: 25%;
+    
     
 
 }
-.footer .container .row .footer-col h4{
+.footer .conta .row .footer-col h4{
     font-size: 1.1rem;
     color: #fff;
     text-transform: uppercase;
@@ -695,7 +807,7 @@ span.cart-num{
     position: relative;
     
 }
-.footer .container .row .footer-col h4::before{
+.footer .conta .row .footer-col h4::before{
     content: '';
     position: absolute;
     left: 0px;
@@ -704,6 +816,9 @@ span.cart-num{
     height: 2px;
     box-sizing: border-box;
     width: 60px;
+}
+.footer-col ul{
+    padding: 0rem;
 }
 
 .footer-col ul li:not(:last-child){
@@ -751,85 +866,16 @@ span.cart-num{
 /************************************************** Footer *****************************************/
 
 
-.fix-nav{
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    left: 0px;
-    background-color: #fff;
-    box-shadow: 2px 2px 30px rgba(0, 0,0,0.04 );
-    z-index: 102;
-}
-.toggle{
-    display: none;
-}
+
 
 @media(max-width:1010px){
  
-    nav{
-        position: relative;
-        
-    }
-    .navigation{
-        height: 80px;
-        
-    }
-    .fix-nav{
-        height: 80px;
-    }
-    ul.menu{
-        position: absolute;
-        top: 110px;
-        left: 0px;
-        background-color: #fff;
-        border-bottom: 4px solid #0b9d8a;
-        width: 100%;
-        padding: 0px;
-        margin: 0px;
-        z-index: 102;
-        flex-direction: column;
-        display: none;
-     
-    }
-    .fix-nav .menu{
-        top: 80px;
-
-    }
-    ul.menu li{
-        width: 100%;
-        margin: 0px;
-        padding: 0px;
-       
-    }
-    .navigation .menu li a{
-        width: 100%;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        margin: 0px;
-        padding: 25px;
-        border: 1px solid rgba(0, 0,0,0.03 );
-    }
+ 
     span.sale-label{
         display: none;
     }
-    .toggle{
-        display: block;
-    }
-    .toggle:before{
-        content: '\f0c9';
-        font-family: fontAwesome;
-        line-height: 30px;
-        z-index: 1;
-        cursor: pointer;
+   
 
-    }
-    .toggle.active:before{
-        content: '\f00d';
-    }
-    .navigation.active .menu{
-        display: block;
-    }
     .full-slider-box,
     .banner{
         height: 45vh;
@@ -862,11 +908,17 @@ span.cart-num{
         display: grid;
         grid-template-columns: repeat(3, 1fr);
     }
+    
+    .footer .conta .row .footer-col{
+        width: 100%;
+        margin-bottom: 70px;
+       margin-left: 30px;
+    }
    
 }
 
 @media(max-width:600px){
-    .navigation{
+    .nav{
         padding: 10px;
     }
     .full-slider-text strong,
@@ -922,22 +974,52 @@ span.cart-num{
     .sign-up-form{
         width: 90%;
     }
+
+    .footer .conta .row .footer-col{
+        width: 50%;
+        margin-bottom: 70px;
+       margin-left: 35px;
+    }
+
+
+
+    .left-side-cart .card{
+        padding: 0.5rem;
+    }
+
+    
+
+    .left-side-cart .card .cart-product-img img{
+        height: auto;
+        width: 30%;
+       
+    }
+    .left-side-cart .card h3 {
+        font-weight: 600;
+        padding-top: 0.5rem;
+        padding-bottom: 0.5rem;
+        font-size: 1rem;
+        color: #dd2f6e;
+    }
+    .card-title .cart-product-name {
+        font-size: 1rem;
+        margin-bottom: .8rem!important;
+
+    }
+    .card-title p {
+        font-size: .7rem;
+        font-weight: 700;
+        margin-bottom: .4rem!important;
+    }
+    .remove p {
+        font-weight: 700;
+        font-size: 0.7rem;
+    }
+    
     
  
 }
 
 
 /******* Footer ******/
-@media(max-width:767px){
-    .footer .container .row .footer-col{
-        width: 50%;
-        margin-bottom: 30px;
-    }
-}
-@media(max-width:574px){
-    .footer .container .row .footer-col{
-        width: 100%;
-        margin-bottom: 70px;
-       margin-left: 30px;
-    }
-}
+

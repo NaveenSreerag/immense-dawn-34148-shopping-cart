@@ -9,6 +9,7 @@
 
     <!--------stylesheet ---------->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
 
     <!---------fav-icon  ------->
     <link rel="shortcut icon" href="images/pexels-andrea-piacquadio-994197.jpg">
@@ -19,54 +20,49 @@
     <!-- light slider -->
     <link rel="stylesheet" href="css/lightslider.css">
     <script src="https://kit.fontawesome.com/cb20171509.js" crossorigin="anonymous"></script>
+
+    
+
+     
 </head>
 
 <body>
 
-    <!-- navigation -->
-
-    <nav>
-        <!-- social link and phone -->
-        <div class="social-call">
-            <div class="social">
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fas fa-at"></i></a>
-
-            </div>
-            <div class="phone">
-                <span>Call +6526596656</span>
-            </div>
-        </div>
-
-        <!-- menu -->
-        <div class="navigation">
-            <!-- logo -->
-            <a href="#" class="logo">
-                <img src="/images/pexels-andrea-piacquadio-994197.jpg" alt="">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid nav">
+            <a class="navbar-brand logo" href="#">
+                <img src="images/xl-kuns501-s-rubellite-original.jpeg" alt="">
             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Men</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Women</a>
 
-            <div class="toggle"></div>
-
-            <ul class="menu">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Men</a>
-
-                </li>
-                <li><a href="#">Women</a>
-
-                </li>
-                <li><a href="#">Kids</a></li>
-                <li><a href="#">Shop</a>
-                    <span class="sale-label">Sale</span>
-                </li>
-            </ul>
-
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">Kids</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Shop</a>
+                        <span class="sale-label">Sale</span>
+                    </li>
+                   
+                </ul>
+                
+            </div>
             <div class="right-menu">
-                <a href="javascript:void(0);" class="search">
+                <!-- <a href="javascript:void(0);" class="search">
                     <i class="fas fa-search"></i>
-                </a>
+                </a> -->
                 <a href="javascript:void(0);" class="user">
                     <i class="fas fa-user"></i>
                 </a>
@@ -81,17 +77,20 @@
         </div>
     </nav>
 
+
     <!-- search -->
-    <div class="search-bar">
+    <!-- <div class="search-bar">
         <div class="search-input">
-            <input type="text"  placeholder="Search For Product">
+            <input type="text" placeholder="Search For Product">
             <a href="javascript:void(0);" class="cancel-search">
                 <i class="fas fa-times"></i>
             </a>
         </div>
-    </div>
+    </div> -->
 
     <!---------------------Login and sign up ---------------------->
+<div class="container-fluid">
+
 
     <div class="form">
 
@@ -101,9 +100,9 @@
             </a>
             <strong>Log In</strong>
             <form action="">
-                <input type="email" name="email"  placeholder="@gmail.com" required>
-                <input type="password" name="password"  placeholder="Password" required>
-                <input type="submit"  value="Log In">
+                <input type="email" name="email" placeholder="@gmail.com" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="submit" value="Log In">
 
             </form>
             <div class="form-btns">
@@ -121,8 +120,8 @@
             </a>
             <strong>Sign Up</strong>
             <form action="">
-                <input type="text"  placeholder="Username" required>
-                <input type="email" name="email"  placeholder="@gmail.com" required>
+                <input type="text" placeholder="Username" required>
+                <input type="email" name="email" placeholder="@gmail.com" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <input type="submit" value="Sign up">
 
@@ -136,6 +135,8 @@
         </div>
 
     </div>
+
+</div>
 
 
     <!---------------------------------------- Page silder -------------------------------------------->
@@ -590,60 +591,71 @@
             <p>You have 30 days to return</p>
         </div> -->
     </section>
+    
 
+
+
+    
     <!---------------------------------------- Footer ------------------------------------>
-   
-<footer class="footer">
-    <div class="container">
-        <div class="row">
-            <div class="footer-col">
-                <h4>Company</h4>
-                <ul>
-                    <li><a href="#">About Us</a></li>
-                    
-                    <li><a href="#">Our Services</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                </ul>
 
-            </div>
-            <div class="footer-col">
-                <h4>Help</h4>
-                <ul>
-                    <li><a href="#">FAQ</a></li>
-                    <li><a href="#">Shipping</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Order Status</a></li>
-                    <li><a href="#">Payment Options</a></li>
-                </ul>
+    <footer class="footer">
+        <div class="container-fluid conta">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
 
-            </div>
-            <div class="footer-col">
-                <h4>Follow Us </h4>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fas fa-at"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Order Status</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us </h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-at"></i></a>
+
+                    </div>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Online Shop</h4>
+                    <ul>
+                        <li><a href="#">Mobile Phones</a></li>
+                        <li><a href="#">Bag</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Clothes</a></li>
+                    </ul>
+
                 </div>
 
             </div>
-            <div class="footer-col">
-                <h4>Online Shop</h4>
-                <ul>
-                    <li><a href="#">Mobile Phones</a></li>
-                    <li><a href="#">Bag</a></li>
-                    <li><a href="#">Shoes</a></li>
-                    <li><a href="#">Clothes</a></li>
-                </ul>
-
-            </div>
-            
         </div>
-    </div>
 
-</footer>
+    </footer>
+
+
+
+
+
+
+
 
 
 
@@ -753,6 +765,8 @@
 
     </script>
     <script src="js/lightslider.js"></script>
+    <script src="js/bootstrap.js"></script>
+    
 
 </body>
 
