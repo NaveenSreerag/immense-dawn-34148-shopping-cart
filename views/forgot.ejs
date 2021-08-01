@@ -1,0 +1,41 @@
+
+<%-include ('partials/header'); -%>
+
+<div class="container-fluid">
+
+
+    <div class="form">
+
+   
+
+
+        <div class="sign-up-form">
+            <a href="/" class="cancel-form">
+                <i class="fas fa-times"></i>
+            </a>
+            <strong>Forgot Password</strong>
+
+            <form action="/user/forgot-password" method="POST">
+             
+                <input type="email" name="email" placeholder="@gmail.com" >
+         
+                <input type="submit" value="Reset Password">
+
+            </form>
+
+            
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<%-include ('partials/footer'); -%>

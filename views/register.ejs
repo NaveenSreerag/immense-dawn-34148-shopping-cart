@@ -1,0 +1,44 @@
+
+<%-include ('partials/header'); -%>
+
+<div class="container-fluid">
+
+
+    <div class="form">
+
+
+        <div class="sign-up-form">
+            <a href="/" class="cancel-form">
+                <i class="fas fa-times"></i>
+            </a>
+            <strong>Sign Up</strong>
+
+            <form action="/user/regsiter" method="POST">
+                <input type="text" name="name" placeholder="Name" >
+                <input type="text" name="username" placeholder="Username" >
+                <input type="email" name="email" placeholder="@gmail.com" >
+                <input type="password" name="password" placeholder="Password" >
+                <input type="password" name="confpassword" placeholder="Confirm Password" >
+                <input type="submit" value="Sign up">
+
+            </form>
+
+            <div class="form-btns">
+                <a href="/user/login" class="already-account">Already have an account?</a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<%-include ('partials/footer'); -%>

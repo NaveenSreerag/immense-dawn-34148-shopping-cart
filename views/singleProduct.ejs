@@ -1,0 +1,240 @@
+<%-include ('partials/header'); -%>
+
+
+
+
+
+
+    <section class="section product-detail">
+        <div class="container-fluid ">
+
+            <div class="details ">
+                <div class="left">
+                    <div class="main">
+                        <img src="/product_images/<%=p._id%>/<%=p.image%>" alt="" id="main-img">
+                    </div>
+
+                    <div class="thumbnails">
+
+                        <% galleryImages.forEach(function(image){ %>
+
+                            <% if(image !="thumbs" ){ %>
+
+                                <div class="thumbnail">
+                                    <img src="/product_images/<%= p._id%>/gallery/<%=image%>" alt=""
+                                        class="thumbnail-img">
+                                </div>
+
+
+                                <% } %>
+
+
+
+                                    <% }) %>
+
+                    </div>
+                </div>
+
+                <div class="right">
+                    <h2>
+                        <%=p.name%>
+                    </h2>
+                    <div class="price">$<%=p.price%>
+                    </div>
+                    <form>
+                        <div>
+                            <select>
+                                <option value="Select Size" selected disabled>Select Size</option>
+                                <option value="32">32</option>
+                                <option value="42">42</option>
+                                <option value="52">52</option>
+                                <option value="62">62</option>
+                            </select>
+
+                        </div>
+                    </form>
+                    <form action="" class="form-add">
+                        <input type="text" placeholder="1">
+                        <a href="/cart/add/<%=p.slug%>" class="addCart">Add to Cart</a>
+                    </form>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="container-fluid pro-details">
+
+
+                <h3>Product Details <i class="fal fa-chevron-circle-right"></i></h3>
+                <p>
+                    <%=p.description%>
+                </p>
+            </div>
+
+
+            <!---------------------------- comments ------------------------->
+            <div class="container-fluid">
+
+
+                <div class="comment-form my-4 ">
+                    <h4 class="text-center py-2">Leave a Comment</h4>
+                    <form action="/<%=p._id%>/reviews" method="POST">
+                        
+                        <div class="mb-3">
+                            <label for="" class="form-label"></label>
+                            <input type="text" class="form-control" name="rating" placeholder="Rating /5">
+                        </div>
+                        <div class="mb-3">
+                            <label for="" class="form-label"></label>
+                            <textarea class="form-control" id="" rows="3" placeholder="Comment"
+                                name="review"></textarea>
+                        </div>
+                        <div class="mb-3 text-center">
+                            <% if(user) { %>
+                                <button class="btn btn-primary ">Submit</button>
+                                <%}else{ %>
+                                   <a href="/user/login" class="logContinue">Login to Continue</a>
+                                    <%} %>
+
+                        </div>
+                    </form>
+
+                </div>
+
+
+                <div class="comments-post py-3">
+                    <h4 class="text-center  py-2"> </h4>
+                </div>
+
+                <% p.reviews.forEach(function(review){%>
+
+                    <!-- comment 1 -->
+                    <div class="comment-details">
+
+                        <div class="comment-item ">
+
+
+                            <div class="profile">
+                                <!-- imag -->
+                                <div class="profile-img">
+                                    <% if(review.user.photo==="deafult.jpg"){ %>
+
+
+                                        <img src="/images/user/<%=review.user.photo%>" class="" alt="">
+                                   <% }else{ %>
+                                    <img src="/images/user/<%=review.user.id%>/<%=review.user.photo%>" class="" alt="">
+                                   <% } %>
+
+                                  
+                                </div>
+                                <!-- name and username -->
+                                <div class="name-user">
+                                    <strong>
+                                        <%=review.user.name%>
+                                    </strong>
+                                    <span>
+                                        <%=moment(review.createdAt).format('LLL')%>
+                                    </span>
+
+                                </div>
+                            </div>
+
+                            <div class="reviews">
+                                <!-- <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="far fa-star"></i> -->
+                                <span>
+                                    <%=review.rating%> / 5
+                                </span>
+
+                                <% if(user){%>
+
+                                <% if(user.id===review.user.id){ %>
+                                <span>
+
+                                        <a href="/<%=review._id%>/delete"
+                                            onclick="return confirm('Are You sure you want to delete this ')"><i
+                                                class="las la-trash font-awesome"></i></a>
+
+
+                               </span>
+
+                                <% } %>
+
+                                   
+                                <span></span>
+
+                                <% } %>
+
+                              
+
+                            </div>
+
+                        </div>
+                        <!-- comments -->
+                        <div class="user-comments">
+                            <p>
+                                <%=review.review%>
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <% }) %>
+
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+
+
+
+    <!----------------------------------------- Feature  --------------------------------->
+
+    <!-- banner -->
+
+    <section>
+        <div class="banner f-slide-1">
+            <div class="banner-text-container">
+                <div class="banner-text">
+                    <span>Limited Offer</span>
+                    <strong>30% off <br> with <font>promo code</font></strong>
+                    <a href="#" class="banner-btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!------------------------------------- Services ----------------------------------->
+
+    <section class="service">
+        <div class="service-box">
+            <i class="fas fa-shipping-fast"></i>
+            <span>Free Shipping</span>
+            <p>Free Shipping For all US Orders</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-headphones-alt"></i>
+            <span>Support 24/7</span>
+            <p>We Support 24h a Day</p>
+        </div>
+        <!-- <div class="service-box">
+            <i class="fas fa-sync"></i>
+            <span>100%</span>
+            <p>You have 30 days to return</p>
+        </div> -->
+    </section>
+
+
+
+
+    <%-include ('partials/footer'); -%>

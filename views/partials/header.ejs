@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping| <%=title%>
+    </title>
+    <link rel="icon" href="/images/hdset1.jpeg" type="image">
+
+    <!--------stylesheet ---------->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/singleproduct.css">
+
+    <!---------fav-icon  ------->
+    <link rel="shortcut icon" href="/images/pexels-andrea-piacquadio-994197.jpg">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- light slider -->
+    <link rel="stylesheet" href="/css/lightslider.css">
+    <script src="https://kit.fontawesome.com/cb20171509.js" crossorigin="anonymous"></script>
+
+    <!-- line awesome -->
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+        integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid nav">
+            <a class="navbar-brand logo" href="#">
+                <img src="/images/hdset1.jpeg" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                      <%  if(user){ %>
+                        <a class="nav-link" href="/order/myorders">My Orders</a>
+                      <%  }else{ %>
+                        <a class="nav-link" href="/">Men</a>
+                        <%  } %>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Women</a>
+
+                    </li>
+                    <li class="nav-item"><a href="#" class="nav-link">Kids</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Shop</a>
+                        <span class="sale-label">Sale</span>
+                    </li>
+                
+
+
+                    <% if(user) { %>
+
+                     
+
+                        <li class="nav-item">
+                           
+                            <a href="/user/my-account" class="user nav-link">
+                                <% if(user.photo==="deafult.jpg"){ %>
+
+
+                                    <img src="/images/user/<%=user.photo%>" class="user-deafult-image" alt="">
+                               <% }else{ %>
+                                <img src="/images/user/<%=user.id%>/<%=user.photo%>" class="user-deafult-image" alt="">
+                               <% } %>
+                                 
+                              
+                             
+                                
+                                 <%= user.name%></a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a href="/user/logout" class="user nav-link">
+                                Logout
+                            </a>
+                        </li>
+                        
+
+                        <% } %>
+
+                        <% if(user && user.admin == 1) { %>
+
+                            <li class="nav-item">
+                                <a href="/admin/dashboard" class="user nav-link">
+                                 Admin Area
+                                </a>
+                            </li>
+    
+                            <% } %>
+
+
+                          
+
+                </ul>
+
+            </div>
+            <div class="right-menu">
+                <!-- <a href="javascript:void(0);" class="search">
+                    <i class="fas fa-search"></i>
+                </a> -->
+
+
+                <%if (!user){ %>
+                    <a href="/user/register" class="user">
+                        <i class="las la-user font-awesome"></i>
+                    </a>
+
+                    <% } %>
+
+
+
+                       
+                            <a href="/cart/checkout">
+                                <i class="fas fa-shopping-cart">
+                                    <span class="cart-num">
+
+                                        <% if (typeof cart !=="undefined" ){ %>
+
+                                            <%= cart.length%>
+
+                                                <% } else { %>
+
+                                                    0
+
+                                                    <% } %>
+                                    </span>
+                                </i>
+                            </a>
+
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- search -->
+    <!-- <div class="search-bar">
+        <div class="search-input">
+            <input type="text" placeholder="Search For Product">
+            <a href="javascript:void(0);" class="cancel-search">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+    </div> -->
+
+    <!---------------------Login and sign up ---------------------->
+
+
+
+
+
+    <div class="container-fluid mt-5 w-66">
+
+        <%- messages('messages', locals) %>
+
+            <% if (errors){ %>
+                <% errors.forEach(function(error){ %>
+                    <div class="alert alert-warning" role="alert">
+                        <%= error.msg %>
+                    </div>
+
+                    <% }); %>
+                        <% } %>
+
+    </div>

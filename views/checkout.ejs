@@ -1,0 +1,229 @@
+<%-include ('partials/header'); -%>
+
+
+    <%if (typeof cart!=="undefined" ){%>
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-10 col-11 mx-auto">
+                    <div class="row mt-5 gx-3">
+                        <!-- left side cart  -->
+                        <div class="col-md-12 col-lg-8 col-11  left-side-cart mb-lg-0">
+
+                            <h3>Cart (
+                                <%if (typeof cart!=="undefined" ){%>
+
+                                    <%= cart.length %>
+
+                                        <% }else{ %>
+                                            0
+                                            <% } %>items)
+
+                            </h3>
+
+
+
+                            <% var total=0; %>
+
+
+                                <% cart.forEach(function(product){ %>
+
+
+                                    <% subTotal=product.qty*product.price %>
+                                        <% total +=subTotal %>
+
+                                            <div class="card">
+
+
+                                                <div class="row">
+                                                    <!-- cart product image -->
+                                                    <div class="col-md-5 col-11 cart-product-img">
+                                                        <img src="<%=product.image%>" class="img-fluid" alt="">
+                                                    </div>
+
+                                                    <!-- cart product details -->
+                                                    <div class="col-md-7 col-11 mx-auto px-4 mt-2">
+                                                        <div class="row">
+                                                            <!-- cart product name -->
+                                                            <div class="col-6 col-12 card-title">
+                                                                <a
+                                                                    href="/products/<%=product.category%>/<%=product.name%>">
+                                                                    <h2 class="mb-4 cart-product-name">
+                                                                        <%=product.name%>
+                                                                    </h2>
+                                                                </a>
+                                                                <p class="mb-2 cart-price">Price $<%=product.price%>
+                                                                </p>
+                                                                <!-- <p class="mb-2">WATCH - BLUE</p>
+                                                    <p class="mb-2">COLOR : BLUE</p>
+                                                    <p class="mb-3">SIZE : M>/p> -->
+                                                            </div>
+                                                            <!-- quantity -->
+                                                            <div class="col-6 col-12">
+                                                                <ul
+                                                                    class="pagination justify-content-end cart-quantity">
+                                                                    <li class="page-item">
+                                                                        <a href="/cart/update/<%=product.name%>?action=remove"
+                                                                            class="page-link">
+
+                                                                            <i class="fas fa-minus"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item">
+                                                                        <a href="#" class="page-link">
+                                                                            <%=product.qty%>
+                                                                        </a>
+                                                                    </li>
+                                                                    <li class="page-item">
+                                                                        <a href="/cart/update/<%=product.name%>?action=add"
+                                                                            class="page-link">
+                                                                            <i class="fas fa-plus"></i>
+                                                                        </a>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-8 remove ">
+                                                                <p>
+                                                                    <a
+                                                                        href="/cart/update/<%=product.name%>?action=clear"><i
+                                                                            class="fas fa-trash-alt"></i>REMOVE
+                                                                    </a>
+                                                                </p>
+                                                                <p><i class="fas fa-heart"></i>WISH LIST</p>
+                                                            </div>
+                                                            <div
+                                                                class="col-4 d-flex justify-content-end cart-price mt-3">
+                                                                <h3> $<%=subTotal%>
+                                                                </h3>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <hr>
+
+
+
+                                            <% }) %>
+
+
+                                                <a href="/cart/clear"
+                                                    onclick="return confirm('Do you want to clear all ')"> <button
+                                                        class="btn btn-primary checkout-btn mb-1">
+                                                        Clear All </button></a>
+
+                        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        <!-- right side  -->
+                        <div class="col-md-12 col-lg-4 col-12 mx-auto mt-lg-0 mt-md-5">
+                            <div class="right-side-cart">
+                                <h3 class="prod-total"> Total Amount</h3>
+                                <div>
+                                    <p>Product Amount</p>
+                                    <p> $<%=total%>
+                                    </p>
+                                </div>
+                                <div>
+                                    <p>Shipping Charge</p>
+                                    <p>$0</p>
+                                </div>
+                                <hr>
+
+                                <div class="cart-product-total-amount ">
+                                    <p>The Total amount of (including VAT)</p>
+                                    <p>$<%=total%>
+                                    </p>
+                                </div>
+                                <button class="btn btn-primary checkout-btn">Checkout</button>
+                            </div>
+                            <!-- address -->
+                            <div class="address mt-3 shadow">
+                                <div class="card">
+                                    <div class="card-body">
+
+
+                                        <form action="/order" method="POST">
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Name</label>
+                                                <input type="text" class="form-control" id=""
+                                                    placeholder="Name" name="name">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Address</label>
+                                                <input type="text" class="form-control" id=""
+                                                    aria-describedby="emailHelp" placeholder="Address" name="address">
+                                                <div id="emailHelp" class="form-text">We'll never share your address
+                                                    with anyone else.</div>
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Land Mark, Town</label>
+                                                <input type="text" class="form-control" id=""
+                                                    placeholder="Land mark , Town" name="landmark">
+                                            </div>
+                                            <div class="mb-3">
+                                                <label for="" class="form-label">Phone Number</label>
+                                                <input type="text" class="form-control" id=""
+                                                    placeholder="Phone Number" name="phone">
+                                            </div>
+
+                                            <button type="submit" class="btn btn-primary address-btn">Place
+                                                Order</button>
+                                        </form>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+
+        </div>
+
+
+        <div class="container-fluid">
+
+
+            <% }else{ %>
+                <h3 class="my-4 text-center mx-5">There is no Cart</h3>
+
+                <% } %>
+
+            </div>
+
+
+
+
+
+            
+
+ <%-include ('partials/footer'); -%>
+
+        

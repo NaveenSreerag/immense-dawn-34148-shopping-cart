@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+/* font-family: 'Poppins', sans-serif; */
+
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff;
+    margin-left: auto;
+    margin-right: auto;
+   
+
+}
+*{
+    
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+
+
+#imgpreview{
+    margin: 20px;
+    width: 20%;
+    height: 120px;
+    object-fit: contain;
+    object-position: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#catimg,
+#prodimage
+{
+    width: 20%;
+    height: 130px;
+    object-fit: contain;
+    object-position: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#current-img{
+  
+        width: 20%;
+        height: 200px;
+        object-fit: contain;
+        object-position: center;
+        justify-content: center;
+        align-items: center;
+   
+    
+}
+.current-img{
+  
+    width: 20%;
+    height: 200px;
+    object-fit: contain;
+    object-position: center;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+ul.gallery{
+    padding:0;
+}
+
+ul.gallery li:first-child{
+    margin-left: 0;
+}
+
+ul.gallery li{
+    margin: 20px;
+    display: inline-block;
+}
+.font-awesome{
+    font-size: 2rem;
+    color: black;
+}
+

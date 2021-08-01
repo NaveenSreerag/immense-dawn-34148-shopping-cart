@@ -1,0 +1,124 @@
+<%-include ('partials/header'); -%>
+   
+
+
+    <!-- new arrival -->
+
+    <section class="arrival-new">
+
+        <!-- <div class="feature-heading">
+            <h2></h2>
+        </div> -->
+
+        <div class="product-container">
+
+            <% products.forEach(function(p){ %>
+
+                <div class="product-items">
+
+                    <div class="product-image">
+                        <a href="#" class="add-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                        <a href="/products/<%=p.category%>/<%=p.slug%>">
+                            <img src="/product_images/<%=p._id%>/<%=p.image%>" alt="">
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <a href="/products/<%=p.category%>/<%=p.slug%>" class="product-name">
+                            <%=p.name.substring(0,14)+"..."%>
+                        </a>
+                        <span class="product-price">$<%=p.price%></span>
+                        
+                    </div>
+                </div>
+
+                <% }) %>
+
+
+              
+
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <section class="sale">
+
+        <div class="sale-box">
+            <img src="/images/jersey-provogue-015-laptop-backpack-provogue-45-original-.jpeg" alt="">
+            <a href="#">
+                <div class="sale-text">
+                    <strong>Bag With Rose Pattern</strong>
+                    <span>Sale off 25%</span>
+                </div>
+            </a>
+        </div>
+        <div class="sale-box">
+            <img src="/images/image 14.jpeg" alt="">
+            <a href="#">
+                <div class="sale-text">
+                    <strong>Bag With Rose Pattern</strong>
+                    <span>Sale off 25%</span>
+                </div>
+            </a>
+        </div>
+        <div class="sale-box">
+            <img src="/images/image 13.jpeg" alt="">
+            <a href="#">
+                <div class="sale-text">
+                    <strong>Bag With Rose Pattern</strong>
+                    <span>Sale off 25%</span>
+                </div>
+            </a>
+        </div>
+
+    </section>
+
+
+    <!----------------------------------------- Feature  --------------------------------->
+
+    <!-- banner -->
+
+    <section>
+        <div class="banner f-slide-1">
+            <div class="banner-text-container">
+                <div class="banner-text">
+                    <span>Limited Offer</span>
+                    <strong>30% off <br> with <font>promo code</font></strong>
+                    <a href="#" class="banner-btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!------------------------------------- Services ----------------------------------->
+
+    <section class="service">
+        <div class="service-box">
+            <i class="fas fa-shipping-fast"></i>
+            <span>Free Shipping</span>
+            <p>Free Shipping For all US Orders</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-headphones-alt"></i>
+            <span>Support 24/7</span>
+            <p>We Support 24h a Day</p>
+        </div>
+        <!-- <div class="service-box">
+            <i class="fas fa-sync"></i>
+            <span>100%</span>
+            <p>You have 30 days to return</p>
+        </div> -->
+    </section>
+
+
+
+
+    <%-include ('partials/footer'); -%>

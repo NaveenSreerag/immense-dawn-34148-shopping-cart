@@ -1,0 +1,289 @@
+<%-include ('partials/header'); -%>
+    <!---------------------------------------- Page silder -------------------------------------------->
+    <section>
+
+
+
+
+        <ul id="adaptive" class="cs-hidden">
+            <!-- box 1 -->
+            <li class="item-a">
+                <div class="full-slider-box f-slide-1">
+                    <div class="slider-text-container">
+                        <div class="f-slider-text">
+                            <span>Limited Offer</span>
+                            <strong>30% off <br> with <font>promo code</font></strong>
+                            <a href="#" class="f-slider-btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+
+            <li class="item-a">
+                <div class="full-slider-box f-slide-1">
+                    <div class="slider-text-container">
+                        <div class="f-slider-text">
+                            <span>Limited Offer</span>
+                            <strong>30% off <br> with <font>promo code</font></strong>
+                            <a href="#" class="f-slider-btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+
+            <li class="item-a">
+                <div class="full-slider-box f-slide-1">
+                    <div class="slider-text-container">
+                        <div class="f-slider-text">
+                            <span>Limited Offer</span>
+                            <strong>30% off <br> with <font>promo code</font></strong>
+                            <a href="#" class="f-slider-btn">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+
+            </li>
+
+
+
+        </ul>
+    </section>
+
+    <!--------------------------------Featured Categories  --------------------------------->
+    <section>
+        <div class="feature-heading">
+            <h2>Featured Categories</h2>
+        </div>
+
+        <ul id="autoW" class="cs-hidden">
+            <% categories.forEach(function(c){ %>
+                <li class="item-a">
+                    <div class="feature-box">
+                        <a href="/<%=c.slug%>">
+                            <img src="category_images/<%=c._id%>/<%=c.categoryImage%>" alt="">
+                        </a>
+                    </div>
+                    <a href="/<%=c.slug%>"><span>
+                            <%=c.name%>
+                        </span></a>
+                </li>
+
+                <% }) %>
+
+
+
+        </ul>
+
+
+    </section>
+
+
+    <!-- new arrival -->
+
+    <section class="arrival-new">
+
+
+        <div class="heading-arrival">
+            <strong>New Arrival</strong>
+            <p>We Provide You New Design Fashion Cloths</p>
+
+        </div>
+
+        <div class="product-container">
+
+            <% products.forEach(function(p){ %>
+
+                <div class="product-items">
+
+                    <div class="product-image">
+                        <a href="/cart/add/<%=p.slug%>" class="add-cart">
+                            <i class="fas fa-shopping-cart"></i>
+                        </a>
+                        <a href="/products/<%=p.category%>/<%=p.slug%>">
+                            <img src="product_images/<%=p._id%>/<%=p.image%>" alt="">
+                        </a>
+                    </div>
+                    <div class="product-details">
+                        <a href="/products/<%=p.category%>/<%=p.slug%>" class="product-name">
+                            <%=p.name.substring(0,14)+"..."%>
+                        </a>
+                        <span class="product-price">$<%=p.price%></span>
+                        <span class="product-review mt-2">Reviews (<%=p.reviews.length%>)</span>
+                    </div>
+                </div>
+
+                <% }) %>
+
+
+              
+
+
+
+        </div>
+
+    </section>
+
+
+
+
+
+    <section class="sale">
+
+        <div class="sale-box">
+            <img src="images/jersey-provogue-015-laptop-backpack-provogue-45-original-.jpeg" alt="">
+            <a href="#">
+                <div class="sale-text">
+                    <strong>Bag With Rose Pattern</strong>
+                    <span>Sale off 25%</span>
+                </div>
+            </a>
+        </div>
+        <div class="sale-box">
+            <img src="images/image 14.jpeg" alt="">
+            <a href="#">
+                <div class="sale-text">
+                    <strong>Bag With Rose Pattern</strong>
+                    <span>Sale off 25%</span>
+                </div>
+            </a>
+        </div>
+        <div class="sale-box">
+            <img src="images/image 13.jpeg" alt="">
+            <a href="#">
+                <div class="sale-text">
+                    <strong>Bag With Rose Pattern</strong>
+                    <span>Sale off 25%</span>
+                </div>
+            </a>
+        </div>
+
+    </section>
+
+
+    <!----------------------------------------- Feature  --------------------------------->
+
+    <!-- <section class="arrival-new">
+
+
+        <div class="heading-arrival">
+            <strong>Feature Items</strong>
+            <p>We Provide You New Design Fashion Cloths</p>
+
+        </div>
+
+        <div class="product-container">
+
+            <div class="product-items">
+
+                <div class="product-image">
+                    <a href="#" class="add-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    <img src="images/microsoft-na-2-in-1-laptop-original-.jpeg" alt="">
+                </div>
+                <div class="product-details">
+                    <a href="#" class="product-name">MICROSOFT Pentium Gold</a>
+                    <span class="product-price">$28.00</span>
+                </div>
+            </div>
+
+            <div class="product-items">
+
+                <div class="product-image">
+                    <a href="#" class="add-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    <img src="images/airdopes-131-boat-original-.jpeg" alt="">
+                </div>
+                <div class="product-details">
+                    <a href="#" class="product-name">boAt Bluetooth Headset</a>
+                    <span class="product-price">$28.00</span>
+                </div>
+            </div>
+
+            <div class="product-items">
+
+                <div class="product-image">
+                    <a href="#" class="add-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    <img src="images/6-str-86-6-strollin-multicolor-original.jpeg" alt="">
+                </div>
+                <div class="product-details">
+                    <a href="#" class="product-name">PEHANOSA
+                        (Multicolor)</a>
+                    <span class="product-price">$25.00</span>
+                </div>
+            </div>
+            <div class="product-items">
+
+                <div class="product-image">
+                    <a href="#" class="add-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    <img src="images/aspcamerasmok-reel-me-c20-blue1-lilliput-original-.jpeg" alt="">
+                </div>
+                <div class="product-details">
+                    <a href="#" class="product-name">Lilliput Back Cover RealmeC20</a>
+                    <span class="product-price">$28.00</span>
+                </div>
+            </div>
+            <div class="product-items">
+
+                <div class="product-image">
+                    <a href="#" class="add-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                    </a>
+                    <img src="images/pc-ct-02-furn-master-white-original.jpeg" alt="">
+                </div>
+                <div class="product-details">
+                    <a href="#" class="product-name">Furn Master Plastic Coffee Table</a>
+                    <span class="product-price">$28.00</span>
+                </div>
+            </div>
+
+        </div>
+
+    </section> -->
+
+    <!-- banner -->
+
+    <section>
+        <div class="banner f-slide-1">
+            <div class="banner-text-container">
+                <div class="banner-text">
+                    <span>Limited Offer</span>
+                    <strong>30% off <br> with <font>promo code</font></strong>
+                    <a href="#" class="banner-btn">Shop Now</a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!------------------------------------- Services ----------------------------------->
+
+    <section class="service">
+        <div class="service-box">
+            <i class="fas fa-shipping-fast"></i>
+            <span>Free Shipping</span>
+            <p>Free Shipping For all US Orders</p>
+        </div>
+        <div class="service-box">
+            <i class="fas fa-headphones-alt"></i>
+            <span>Support 24/7</span>
+            <p>We Support 24h a Day</p>
+        </div>
+        <!-- <div class="service-box">
+            <i class="fas fa-sync"></i>
+            <span>100%</span>
+            <p>You have 30 days to return</p>
+        </div> -->
+    </section>
+
+
+
+
+    <%-include ('partials/footer'); -%>

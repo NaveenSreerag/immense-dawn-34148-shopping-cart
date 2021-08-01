@@ -1,0 +1,112 @@
+<%- include('../partials/adminheader'); -%>
+
+
+    <div class="table-container">
+        <h1 class="heading">Customer  Orders</h1>
+        <table class="table">
+
+
+            <% if(orders.length){ %>
+
+
+
+
+                <thead>
+                    <tr>
+                        <th>Customer </th>
+                        <th>Orders</th>
+                        <th>Address</th>
+                        <th>Phone Number</th>
+                        <th>Status</th>
+                        <th>Payment Type</th>
+                        <th>Placed at</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                  
+                    <% orders.forEach(function(order){ %>
+                        
+
+
+                        <tr>
+
+
+
+                            <td data-label="Customer" class="orderId">
+                                <span class="text-lowercase order-span"> <%=order._id%> </span>
+                                 <%=order.customerId.name%>
+
+                            </td>
+                            <td data-label="Orders">
+
+                                <% var total=0; %>
+                                <% order.items.forEach(function(item){ %>
+
+
+                                    <% var subTotal = item.qty * item.price%>
+
+                                    <% total +=subTotal %>
+
+                                    <ul>
+                                        <li><%=item.name%></li>
+                                        <li><img src="<%=item.image%>" alt="" class="order-image"> </li>
+                                        <li>Quantity : <%=item.qty%></li>
+                                        <li>Price : $ <%=item.price%></li>
+                                        <li>SubTotal= $ <%=subTotal%></li>
+                                    </ul>
+                                    <hr>
+
+                                <% }) %>
+
+                                <p>Total = $ <%=total%></p>
+
+
+                            </td>
+                            <td data-label="Address">
+                                <ul>
+                                    <li><%=order.address%></li>
+                                    <li><%=order.landmark%></li>
+                                    <li><%=order.town%></li>
+                                </ul>
+
+                            </td>
+                            <td data-label="Phone Number"><%=order.phone%></td>
+                            <td data-label="Status">
+                                <form action="/admin/orders/status" method="POST">
+                                    <input type="hidden" name="orderId" id="" value="<%=order._id%>">
+                                    <select name="status" onchange="this.form.submit()" id="">
+                                           <option value="order_placed" <%=order.status=== 'order_placed'? 'selected' :'' %> > Placed</option>
+                                           <option value="confirmed" <%=order.status === 'confirmed' ? 'selected' : '' %> > Confirmed </option>
+                                           <option value="prepared" <%=order.status=== 'prepared' ? 'selected' :'' %> > Prepared</option>
+                                           <option value="delivered" <%=order.status === 'delivered' ? 'selected' : '' %> > Delivered</option>
+                                           <option value="completed" <%=order.status === 'completed' ? 'selected' : '' %> >Completed</option>
+                                          
+                                           
+                                    </select>
+                                </form>
+                            </td>
+                            <td data-label="Payment Type"><%=order.paymentType%></td>
+                            <td data-label="Placed at"><%=moment(order.createdAt).format('LLL')%></td>
+                        </tr>
+
+
+                        <% }) %>
+
+
+                </tbody>
+
+
+                <% } else{ %>
+                    <h5>No Orders Found!</h5>
+
+                    <% } %>
+
+        </table>
+    </div>
+
+
+
+
+
+    <%-include ('../partials/adminfooter'); -%>

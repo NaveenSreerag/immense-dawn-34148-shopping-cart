@@ -1,0 +1,52 @@
+<%- include('../partials/adminheader'); -%>
+
+
+    <div class="container">
+        <h2 class="text-center m-4">Categories</h2>
+        <hr>
+        <a href="/admin/categories/add-category" class="btn btn-primary m-1">Add a new Category</a>
+        <div class="table-responsive-sm">
+            <table class="table table-bordered mt-5">
+                <thead>
+                    <tr>
+
+                        <th scope="col">Category</th>
+                        <th scope="col">Category Image</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% categories.forEach(function(cat){ %>
+                        <tr>
+
+                            <td>
+                                <%= cat.name %>
+                            </td>
+                            <td>
+
+                           <% if (cat.categoryImage == ""){ %>
+
+                               <img src="/images/noimage.png" id="catimg" alt="">
+
+                           <% }else{ %>
+                               <img src="/category_images/<%= cat._id %>/<%= cat.categoryImage %>" id="catimg" alt="">
+                             <% } %>
+
+                            </td>
+                            <td><a href="/admin/categories/edit-category/<%= cat._id %>"><i class="las la-edit font-awesome"></i></a></td>
+                            <td><a href="/admin/categories/delete-category/<%= cat._id %>" onclick="return confirm('Do you want to delete <%=cat.name%>')"><i class="las la-trash font-awesome"></i></a></td>
+                            
+                            
+                        </tr>
+                    <% }) %>
+                      
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+
+    <%-include ('../partials/adminfooter'); -%>

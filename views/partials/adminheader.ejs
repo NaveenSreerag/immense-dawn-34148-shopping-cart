@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%=title%>
+    </title>
+
+    <!--------stylesheet ---------->
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/admin/admin.css">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+
+    <!---------fav-icon  ------->
+    <link rel="shortcut icon" href="images/pexels-andrea-piacquadio-994197.jpg">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <!-- light slider -->
+    <link rel="stylesheet" href="/css/lightslider.css">
+    <script src="https://kit.fontawesome.com/cb20171509.js" crossorigin="anonymous"></script>
+        <!-- line awesome -->
+       
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
+        integrity="sha512-vebUliqxrVkBy3gucMhClmyQP9On/HAWQdKDXRaAlb/FKuTbxkjPKUyqVOxAcGwFDka79eTF+YXwfke1h3/wfg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid nav">
+            <a class="navbar-brand logo" href="#">
+                <img src="images/xl-kuns501-s-rubellite-original.jpeg" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/categories">Categories</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/admin/products" class="nav-link">Products</a>
+
+                    </li>
+                    <li class="nav-item"><a href="/admin/orders" class="nav-link">Orders</a></li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">Shop</a>
+                        <span class="sale-label">Sale</span>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/user/logout" class="user nav-link">
+                            Logout
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+            <!-- <div class="right-menu">
+                <!-- <a href="javascript:void(0);" class="search">
+                    <i class="fas fa-search"></i>
+                </a> -->
+                <!-- <a href="javascript:void(0);" class="user">
+                    <i class="las la-user font-awesome"></i>
+                </a>
+                <a href="#">
+                    <i class="fas fa-shopping-cart">
+                        <span class="cart-num">0</span>
+                    </i>
+                </a>
+
+
+            </div> -->
+        </div>
+    </nav>
+
+
+    <!-- search -->
+    <!-- <div class="search-bar">
+        <div class="search-input">
+            <input type="text" placeholder="Search For Product">
+            <a href="javascript:void(0);" class="cancel-search">
+                <i class="fas fa-times"></i>
+            </a>
+        </div>
+    </div> -->
+
+    <!---------------------Login and sign up ---------------------->
+    <!-- <div class="container-fluid">
+
+
+        <div class="form">
+
+            <div class="login-form">
+                <a href="javascript:void(0);" class="cancel-form">
+                    <i class="fas fa-times"></i>
+                </a>
+                <strong>Log In</strong>
+                <form action="">
+                    <input type="email" name="email" placeholder="@gmail.com" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="submit" value="Log In">
+
+                </form>
+                <div class="form-btns">
+                    <a href="#" class="forget">Forget Your Password</a>
+                    <a href="javascript:void(0);" class="sign-up-btn">Create Account</a>
+                </div>
+
+
+            </div>
+
+
+            <div class="sign-up-form">
+                <a href="javascript:void(0);" class="cancel-form">
+                    <i class="fas fa-times"></i>
+                </a>
+                <strong>Sign Up</strong>
+                <form action="">
+                    <input type="text" placeholder="Username" required>
+                    <input type="email" name="email" placeholder="@gmail.com" required>
+                    <input type="password" name="password" placeholder="Password" required>
+                    <input type="submit" value="Sign up">
+
+                </form>
+                <div class="form-btns">
+                    <a href="javascript:void(0);" class="already-account">Already have an account?</a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div> -->
+
+    <div class="container-fluid mt-5">
+
+        <%- messages('messages', locals) %>
+
+            <% if (errors){ %>
+                <% errors.forEach(function(error){ %>
+                    <div class="alert alert-warning" role="alert">
+                        <%= error.msg %>
+                    </div>
+
+                    <% }); %>
+                        <% } %>
+
+    </div>
+
+

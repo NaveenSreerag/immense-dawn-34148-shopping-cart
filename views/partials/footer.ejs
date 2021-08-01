@@ -1,0 +1,227 @@
+ 
+    <!---------------------------------------- Footer ------------------------------------>
+
+    <footer class="footer">
+        <div class="container-fluid conta">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Shipping</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Order Status</a></li>
+                        <li><a href="#">Payment Options</a></li>
+                    </ul>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Follow Us </h4>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fas fa-at"></i></a>
+
+                    </div>
+
+                </div>
+                <div class="footer-col">
+                    <h4>Online Shop</h4>
+                    <ul>
+                        <li><a href="#">Mobile Phones</a></li>
+                        <li><a href="#">Bag</a></li>
+                        <li><a href="#">Shoes</a></li>
+                        <li><a href="#">Clothes</a></li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- jQuery -->
+    <script src="/js/jquery.js"></script>
+
+    <script type="text/javascript">
+        //  search bar
+        $(document).on('click', '.search', function () {
+            $('.search-bar').addClass('search-bar-active')
+        });
+
+        $(document).on('click', '.cancel-search', function () {
+            $('.search-bar').removeClass('search-bar-active')
+        });
+
+
+        //  login and sign up
+
+     
+
+
+        // Page slider
+
+        $(document).ready(function () {
+            $('#adaptive').lightSlider({
+                adaptiveHeight: true,
+                auto: true,
+
+                item: 1,
+                slideMargin: 0,
+                loop: true
+            });
+        });
+
+        // feature categories silder
+
+        $(document).ready(function () {
+            $('#autoW').lightSlider({
+                autoWidth: true,
+                loop: true,
+                onSliderLoad: function () {
+                    $('#autoW').removeClass('cS-hidden');
+                }
+            });
+        });
+
+        $(window).scroll(function(){
+            if($(document).scrollTop() > 50){
+                $('.navigation').addClass('fix-nav');
+            }
+            else{
+                $('.navigation').removeClass('fix-nav')
+            }
+        });
+
+
+        $(document).ready(function(){
+            $('.toggle').click(function(){
+                $('.toggle').toggleClass('active')
+                $('.navigation').toggleClass('active')
+            })
+        });
+
+
+    </script>
+
+
+
+<!--------------thumbnail gallery image  ------------------->
+<script>
+    var mainImage= document.getElementById("main-img");
+    var thumbnailImage=document.getElementsByClassName("thumbnail-img");
+
+    thumbnailImage[0].onclick= function(){
+        mainImage.src= thumbnailImage[0].src
+    }
+    
+    thumbnailImage[1].onclick= function(){
+        mainImage.src= thumbnailImage[1].src
+    }
+    
+    thumbnailImage[2].onclick= function(){
+        mainImage.src= thumbnailImage[2].src
+    }
+    
+    thumbnailImage[3].onclick= function(){
+        mainImage.src= thumbnailImage[3].src
+    }
+    
+    thumbnailImage[4].onclick= function(){
+        mainImage.src= thumbnailImage[4].src
+    }
+    thumbnailImage[5].onclick= function(){
+        mainImage.src= thumbnailImage[5].src
+    }
+    thumbnailImage[6].onclick= function(){
+        mainImage.src= thumbnailImage[6].src
+    }
+    
+    thumbnailImage[7].onclick= function(){
+        mainImage.src= thumbnailImage[7].src
+    }
+    
+    thumbnailImage[8].onclick= function(){
+        mainImage.src= thumbnailImage[8].src
+    }
+    thumbnailImage[9].onclick= function(){
+        mainImage.src= thumbnailImage[9].src
+    }
+    thumbnailImage[10].onclick= function(){
+        mainImage.src= thumbnailImage[10].src
+    }
+ 
+</script>
+
+<script>
+    profileImg.onchange = evt => {
+        const [file] = profileImg.files
+        if (file) {
+            userAccountImg.src = URL.createObjectURL(file)
+        }
+    }
+</script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="/js/index.js"></script>
+    <script src="/js/lightslider.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    
+
+</body>
+
+</html>

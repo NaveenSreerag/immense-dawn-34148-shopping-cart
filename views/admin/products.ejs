@@ -1,0 +1,79 @@
+<%- include('../partials/adminheader'); -%>
+
+
+    <div class="container">
+        <h2 class="text-center m-4">Products</h2>
+        <hr>
+        <a href="/admin/products/add-product" class="btn btn-primary m-1">Add a new Product</a>
+
+
+       
+
+            <div class="table-responsive-sm">
+                <table class="table table-bordered mt-5">
+                    <thead>
+                        <tr>
+    
+                            <th scope="col">Product</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Edit</th>
+                            <th scope="col">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+    
+                        <% products.forEach(function(product){ %>
+    
+    
+                            <tr>
+    
+                                <td>
+                                    <%=product.name %> </td>
+    
+                                <td>
+                                    <% if (product.image=="" ){ %>
+    
+                                        <img src="/images/noimage.png" alt="" id="prodimage">
+    
+                                        <% }else{ %>
+    
+                                            <img src="/product_images/<%=product._id%>/<%=product.image%>" id="prodimage" alt="">
+    
+                                            <% } %>
+                                </td>
+    
+                                <td>
+                                    <%=product.category%>
+                                </td>
+    
+                                <td>
+                                   Rs. <%=product.price%>
+                                </td>
+                                <td>
+                                     <%=product.size%>
+                                 </td>
+    
+                                <td><a href="/admin/products/edit-product/<%= product._id %>"><i class="las la-edit font-awesome"></i></a></td>
+                                <td><a href="/admin/products/delete-product/<%= product._id %>"
+                                        onclick="return confirm('Do you want to delete <%=product.name%>')"><i class="las la-trash font-awesome"></i></a></td>
+    
+    
+                            </tr>
+                            <% }) %>
+    
+    
+                    </tbody>
+                </table>
+    
+            </div>
+
+      
+
+       
+    </div>
+
+
+    <%-include ('../partials/adminfooter'); -%>

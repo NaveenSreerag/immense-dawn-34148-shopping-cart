@@ -1,0 +1,41 @@
+
+<%-include ('partials/header'); -%>
+
+<div class="container-fluid">
+
+
+    <div class="form">
+
+       
+
+
+        <div class="sign-up-form">
+            <a href="/" class="cancel-form">
+                <i class="fas fa-times"></i>
+            </a>
+            <strong>Reset Password</strong>
+
+            <form action="/user/reset/<%=token%>" method="POST">
+               
+                <input type="password" name="password" placeholder="New Password" >
+                <input type="password" name="confpassword" placeholder="Confirm Password" >
+                <input type="submit" value="Update Password">
+
+            </form>
+
+         
+
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+
+<%-include ('partials/footer'); -%>

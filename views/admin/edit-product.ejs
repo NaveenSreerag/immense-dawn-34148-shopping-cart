@@ -1,0 +1,129 @@
+<%- include('../partials/adminheader'); -%>
+
+<div class="container ">
+
+    <h2 class="mt-4 text-center">Edit Product</h2>
+    <hr>
+    <a href="/admin/products" class="btn btn-primary mt-4">Back to all Products</a>
+
+    <form method="POST" action="/admin/products/edit-product/<%=id%>" enctype="multipart/form-data">
+        <div class="form-group row mb-4 mt-5">
+            <label for="" class="col-sm-2 col-form-label">Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control " id="" placeholder="Product Name" name="name" value="<%=name%>">
+            </div>
+        </div>
+
+        <div class="form-group row mb-4 mt-5">
+            <label for="" class="col-sm-2 col-form-label">Description</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" name="description" id=""  cols="30" rows="10" placeholder="Description"><%=description%></textarea>
+                
+            </div>
+        </div>
+        
+        <div class="form-group row mb-4 mt-5">
+            <label for="" class="col-sm-2 col-form-label">Category</label>
+            <div class="col-sm-10">
+                <select name="category" class="form-control " id="">
+
+                    <% categories.forEach(function(cat){ %>
+
+                        <option value="<%=cat.slug%>"
+
+                           <% if(cat.slug == category){ %>
+                                selected="selected"
+                           <%  } %>
+                            
+                            > <%=cat.name%> </option>
+
+                    <% }) %>
+                </select>
+               
+            </div>
+        </div>
+
+        <div class="form-group row mb-4 mt-5">
+            <label for="" class="col-sm-2 col-form-label">Price</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control " id="" placeholder="Price" name="price" value="<%=price%>">
+            </div>
+        </div>
+
+        <div class="form-group row mb-4 mt-5">
+            <label for="" class="col-sm-2 col-form-label">Size</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control " id="" placeholder="Size" name="size" value="<%=size%>">
+            </div>
+        </div>
+
+        <div class="form-group row mb-4">
+            <label for="" class="col-sm-2 col-form-label">Current Image</label>
+            <div class="col-sm-10">
+
+                <% if(image == ""){ %>
+                    <img src="/images/noimage.png" alt="" class="current-img">
+                <% }else{ %>
+                    <img src="/product_images/<%= id %>/<%= image %>" alt="" class="current-img">
+                 <% } %>
+           
+            </div>
+        </div>
+
+        <div class="form-group row mb-4">
+            <label for="" class="col-sm-2 col-form-label">Upload New Image</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" id="categoryImg" placeholder="Product image"
+                    name="productImage" accept="image/*">
+                <img src="#" id="imgpreview" alt="">
+            </div>
+        </div>
+
+        <div class="form-group row mb-4 text-center">
+            <div class="col-sm-10">
+                <input type="hidden" name="primage" value="<%= image %>">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+
+
+    <hr>
+    <h3 class="my-5">Gallery</h3>
+
+    <ul class="gallery">
+        <% galleryImages.forEach(function(image){ %>
+
+            <% if (image !="thumbs"){ %>
+
+                <li>
+                    <img src="/product_images/<%=id%>/gallery/thumbs/<%=image%>" alt="">&nbsp;
+                    <a href="/admin/products/delete-image/<%= image %>?id=<%= id %>" onclick="return confirm('Do you want to delete this')"><i class="las la-trash font-awesome"></i></a>
+                </li>
+
+
+           <% } %>
+
+           
+
+        <% }) %>
+    </ul>
+
+
+    <br>
+
+    <form action="/admin/products/product-gallery/<%= id %>" method="POST" enctype="multipart/form-data" class="dropzone" id="dropzoneForm">
+          
+        <div class="fallback">
+
+            <input type="file" name="file" multiple>
+            <input type="submit" value="Upload">
+
+        </div>
+    
+    </form>
+
+</div>
+
+
+<%-include ('../partials/adminfooter'); -%>

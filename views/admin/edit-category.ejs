@@ -1,0 +1,58 @@
+<%- include('../partials/adminheader'); -%>
+
+<div class="container ">
+
+    <h2 class="mt-4 text-center">Edit Category</h2>
+    <hr>
+    <a href="/admin/categories" class="btn btn-primary mt-4">Back to all Categories</a>
+
+    <form method="POST" action="/admin/categories/edit-category/<%= id %>" enctype="multipart/form-data">
+
+        <div class="form-group row mb-4 mt-5">
+            <label for="" class="col-sm-2 col-form-label">Category Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control " id="" placeholder="Category Name" name="name" value="<%=name%>">
+            </div>
+        </div>
+
+
+        <div class="form-group row mb-4">
+            <label for="" class="col-sm-2 col-form-label">Current Category Image</label>
+            <div class="col-sm-10">
+                <p>
+                    <% if(image==""){ %>
+                        <img src="/images/noimage.png" id="current-img" alt="">
+
+                   <% }else{ %>
+                        <img src="/category_images/<%= id %>/<%= image %>" id="current-img" alt="">
+
+                   <% } %>
+
+                </p>
+                
+            </div>
+        </div>
+
+
+        <div class="form-group row mb-4">
+            <label for="" class="col-sm-2 col-form-label">Upload Category Image</label>
+            <div class="col-sm-10">
+                <input type="file" class="form-control" id="categoryImg" placeholder="Category image"
+                    name="categoryImage" accept="image/*">
+                <img src="#" id="imgpreview" alt="">
+            </div>
+        </div>
+
+        <div class="form-group row mb-4 text-center">
+            <div class="col-sm-10">
+                <input type="hidden" name="catimage" id="" value="<%=image%>">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </div>
+    </form>
+
+
+</div>
+
+
+<%-include ('../partials/adminfooter'); -%>
