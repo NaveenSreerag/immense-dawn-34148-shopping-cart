@@ -143,6 +143,15 @@ app.use('/user',users)
 app.use('/',reviews)
 app.use('/order',order)
 
-app.listen(3000, function () {
+
+
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3000;
+}
+
+
+
+app.listen(port, function () {
   console.log('server running on port 3000')
 })

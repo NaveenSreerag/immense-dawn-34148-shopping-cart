@@ -12,6 +12,10 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "14.17.0"
+    
+  },
   "bugs": {
     "url": "https://github.com/Principiante-N/new-cart/issues"
   },
