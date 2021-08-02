@@ -151,7 +151,7 @@
                                     <p>$<%=total%>
                                     </p>
                                 </div>
-                                <button class="btn btn-primary checkout-btn">Checkout</button>
+
                             </div>
                             <!-- address -->
                             <div class="address mt-3 shadow">
@@ -162,8 +162,8 @@
                                         <form action="/order" method="POST">
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Name</label>
-                                                <input type="text" class="form-control" id=""
-                                                    placeholder="Name" name="name">
+                                                <input type="text" class="form-control" id="" placeholder="Name"
+                                                    name="name">
                                             </div>
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Address</label>
@@ -179,12 +179,19 @@
                                             </div>
                                             <div class="mb-3">
                                                 <label for="" class="form-label">Phone Number</label>
-                                                <input type="text" class="form-control" id=""
-                                                    placeholder="Phone Number" name="phone">
+                                                <input type="text" class="form-control" id="" placeholder="Phone Number"
+                                                    name="phone">
                                             </div>
+                                            <% if(user) { %>
+                                                <button type="submit" class="btn btn-primary address-btn">Place
+                                                    Order</button>
 
-                                            <button type="submit" class="btn btn-primary address-btn">Place
-                                                Order</button>
+                                                <% }else{ %>
+                                                    <a href="/user/login" class="btn btn-primary address-btn">LogIn to
+                                                        Continue</a>
+
+                                                    <% } %>
+
                                         </form>
                                     </div>
 
@@ -216,14 +223,12 @@
 
                 <% } %>
 
-            </div>
+        </div>
 
 
 
 
 
-            
 
- <%-include ('partials/footer'); -%>
 
-        
+        <%-include ('partials/footer'); -%>
